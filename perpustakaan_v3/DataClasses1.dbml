@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Perpustakaan" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-QQ6C7V0O4HI\SQLEXPRESS;Initial Catalog=Perpustakaan;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="perpustakaan_v3.Properties.Settings" SettingsPropertyName="PerpustakaanConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Pinjam" Member="Pinjams">
+    <Type Name="Pinjam">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="buku_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="akun_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tanggal_pinjam" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="tanggal_pengembalian" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="total_bayar" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Akun_Pinjam" Member="Akun" ThisKey="akun_id" OtherKey="id" Type="Akun" IsForeignKey="true" />
+      <Association Name="Buku_Pinjam" Member="Buku" ThisKey="buku_id" OtherKey="id" Type="Buku" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Akun" Member="Akuns">
+    <Type Name="Akun">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Akun_Pinjam" Member="Pinjams" ThisKey="id" OtherKey="akun_id" Type="Pinjam" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buku" Member="Bukus">
+    <Type Name="Buku">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="judul" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="deskripsi" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="penulis_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="kategori_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Buku_Pinjam" Member="Pinjams" ThisKey="id" OtherKey="buku_id" Type="Pinjam" />
+      <Association Name="Kategori_Buku" Member="Kategori" ThisKey="kategori_id" OtherKey="id" Type="Kategori" IsForeignKey="true" />
+      <Association Name="Penuli_Buku" Member="Penuli" ThisKey="penulis_id" OtherKey="id" Type="Penuli" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kategori" Member="Kategoris">
+    <Type Name="Kategori">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nama" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Kategori_Buku" Member="Bukus" ThisKey="id" OtherKey="kategori_id" Type="Buku" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Penulis" Member="Penulis">
+    <Type Name="Penuli">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nama" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="noTelp" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Penuli_Buku" Member="Bukus" ThisKey="id" OtherKey="penulis_id" Type="Buku" />
+    </Type>
+  </Table>
+</Database>

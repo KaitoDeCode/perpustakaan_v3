@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="52f9c928-e8a1-4163-ae1f-001f203a52e2" absoluteBounds="6.25, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/DataClasses1DataContext/Pinjam" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0f2808f-363c-4086-9ba6-289bf9489fa3" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="376563fd-4792-4751-bfdb-efc4295292df" absoluteBounds="3.5, 4.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Akun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18a4890f-1073-41d8-a529-a193bdb56b67" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6dc596db-af41-4aa6-b6a8-20893489d356" absoluteBounds="3.5, 1, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/DataClasses1DataContext/Buku" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8dc235c8-46c6-4893-a015-5911956d54f7" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b01e8f2-078b-4f50-b3f7-d0014cfdddad" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/DataClasses1DataContext/Kategori" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b46ba275-c6c5-4911-937d-bdc7316f77e6" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d4eab98-ddf6-4474-b0ee-1cc4b754bd20" absoluteBounds="0.75, 4.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Penuli" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3814777-2dc5-442a-808c-f0f413849443" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.94314697265625); (7.25 : 4.94314697265625); (7.25 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Akun/Akun_Pinjam" />
+      <nodes>
+        <classShapeMoniker Id="376563fd-4792-4751-bfdb-efc4295292df" />
+        <classShapeMoniker Id="52f9c928-e8a1-4163-ae1f-001f203a52e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.88544840494792); (6.25 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Buku/Buku_Pinjam" />
+      <nodes>
+        <classShapeMoniker Id="6dc596db-af41-4aa6-b6a8-20893489d356" />
+        <classShapeMoniker Id="52f9c928-e8a1-4163-ae1f-001f203a52e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Kategori/Kategori_Buku" />
+      <nodes>
+        <classShapeMoniker Id="8b01e8f2-078b-4f50-b3f7-d0014cfdddad" />
+        <classShapeMoniker Id="6dc596db-af41-4aa6-b6a8-20893489d356" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.25); (3.125 : 3.875); (3.125 : 2.34019853320313); (3.5 : 2.34019853320313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Penuli/Penuli_Buku" />
+      <nodes>
+        <classShapeMoniker Id="2d4eab98-ddf6-4474-b0ee-1cc4b754bd20" />
+        <classShapeMoniker Id="6dc596db-af41-4aa6-b6a8-20893489d356" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

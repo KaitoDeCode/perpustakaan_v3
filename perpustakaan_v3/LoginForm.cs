@@ -19,6 +19,13 @@ namespace perpustakaan_v3
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            RegisterForm form = new RegisterForm();
+            form.Show();
+            this.Hide();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

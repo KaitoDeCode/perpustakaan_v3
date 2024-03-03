@@ -47,6 +47,7 @@
             this.linkLabel1.TabIndex = 15;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Login!";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label4
             // 
@@ -89,7 +90,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(279, 32);
             this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
+            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -125,6 +126,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.ResumeLayout(false);
             this.PerformLayout();
